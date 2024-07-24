@@ -6,13 +6,11 @@ import "./Auth.css";
 import icon from "../../assets/icon.png";
 import AboutAuth from "./AboutAuth";
 import { signup, login } from "../../actions/auth";
-import ForgotPassword from "./ForgotPassword";
 const Auth = () => {
   const [isSignup, setIsSignup] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [forgotPassword , setForgotPassword] = useState(false) ;
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -40,9 +38,7 @@ const Auth = () => {
   };
 
   return (
-    forgotPassword ? 
-      <ForgotPassword />
-    :
+    
     <section className="auth-section">
       {isSignup && <AboutAuth />}
       <div className="auth-container-2">
@@ -78,7 +74,7 @@ const Auth = () => {
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <h4>Password</h4>
               {!isSignup && (
-                <p style={{ color: "#007ac6", fontSize: "13px" }} onClick={()=> setForgotPassword(true)}>
+                <p style={{ color: "#007ac6", fontSize: "13px" }}}>
                   forgot password?
                 </p>
               )}
