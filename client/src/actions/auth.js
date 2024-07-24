@@ -25,21 +25,3 @@ export const login = (authData, navigate) => async (dispatch) => {
   }
 };
 
-export const forgotPassword = (email,navigate) => async(dispatch) => {
-  try {
-    const {data} = await api.forgotPassword(email) ;
-    console.log(data);
-  } catch (error) {
-    console.log('here is the error' , error) ;
-  }
-}
-
-export const resetPassword = (authData,navigate) => async(dispatch) => {
-  try {
-    const {data} = await api.resetPassword(authData) ;
-    console.log(data) ;
-    navigate('/Auth') ;
-  } catch (error) {
-    console.log(error.message);
-  }
-}
